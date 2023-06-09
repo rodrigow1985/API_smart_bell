@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build: .
+    restart: always
+    container_name: api-smart-bell
+    ports:
+      - "4001:4001"
+    environment:
+      - TZ=America/Argentina/Buenos_Aires  
+    volumes:
+      #- .:/home/node/app/
+      - /data/logs/api-smart-bell:/home/node/app/logs
